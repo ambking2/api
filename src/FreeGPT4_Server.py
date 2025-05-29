@@ -564,11 +564,3 @@ async def get_token():
 if __name__ == "__main__":
     # Starts the server, change the port if needed
     app.run("0.0.0.0", port=args.port, debug=False)
-
-from flask import jsonify
-
-@app.route("/", methods=["GET"])
-def root():
-    return jsonify({
-        "routes": [str(rule) for rule in app.url_map.iter_rules()]
-    })
