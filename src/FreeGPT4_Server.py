@@ -403,6 +403,7 @@ async def index() -> str:
 
     print("start")
     if request.method == "GET":
+        print("Keyword:", args.keyword)
         question = request.args.get(args.keyword) #text
         print(args.private_mode)
         if (args.private_mode and request.args.get("token") != data["token"]):
